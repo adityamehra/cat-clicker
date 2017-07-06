@@ -8,17 +8,17 @@ var ViewModel = function() {
   this.clickCount(this.clickCount() + 1);
  };
 
- // this.level = ko.computed(function() {
- //  if(this.clickCount() == 0){
- //   return 'Newborn';
- //  }else if(this.clickCount() > 0 && this.clickCount() <= 10) {
- //   return 'Infant';
- //  }else if(this.clickCount() > 10 && this.clickCount() <= 19) {
- //   return 'Teen';
- //  }else{
- //   return 'Adult';
- //  }
- // }, this);
+ this.level = ko.computed(function() {
+  if(this.clickCount() == 0){
+   return 'Newborn';
+  }else if(this.clickCount() > 0 && this.clickCount() <= 10) {
+   return 'Infant';
+  }else if(this.clickCount() > 10 && this.clickCount() <= 19) {
+   return 'Teen';
+  }else{
+   return 'Adult';
+  }
+ }, this);
 
 }
 
