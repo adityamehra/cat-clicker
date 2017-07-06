@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Cat Clicker</title>
+    <style>
+     div {
+      display: inline-block;
+     }
+    </style>
 </head>
 <body>
-    <ul id="cat-list"></ul>
+    <div>
+     <ul id="cat-list" data-bind="foreach: listOfCats">
+      <li data-bind="text: name, click: $parent.displayCat">
+      </li>
+     </ul>
+    </div>
 
     <div id="cat" data-bind="with: currentCat">
-
         <h2 id="cat-name" data-bind="text: name"></h2>
         <h3 id="cat-level" data-bind="text: level"></h3>
-        <div id="cat-count" data-bind="text: clickCount"></div>
+        <h3 id="cat-count" data-bind="text: clickCount"></h3>
         <img id="cat-img" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
-
     </div>
 
     <script src="js/lib/knockout-3.2.0.js"></script>
